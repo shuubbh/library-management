@@ -1,8 +1,11 @@
 /* Navbar container */
 .navbar {
-  background: linear-gradient(to right, #14b8a6, #2563eb); /* New gradient */
+  background: linear-gradient(to right, #6a82fb, #fc5c7d), #3a3a3a;
   padding: 1rem 2rem;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar-container {
@@ -17,12 +20,13 @@
 .navbar-title a {
   font-size: 1.8rem;
   font-weight: bold;
-  color: white;
+  color: #f1faee; /* Light white */
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .navbar-title a:hover {
-  color: #60a5fa; /* Light blue hover effect */
+  color: #a8dadc; /* Soft mint hover effect */
 }
 
 /* Links styling */
@@ -32,53 +36,57 @@
 }
 
 .navbar-links a {
-  margin-left: 1.5rem;
+  margin-left: 2rem;
   font-size: 1rem;
-  color: white;
+  font-weight: 500;
+  color: #f1faee;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, font-weight 0.3s ease;
 }
 
 .navbar-links a:hover {
-  color: #60a5fa; /* Light blue hover effect */
+  color: #a8dadc; /* Mint hover */
+  font-weight: 600;
 }
 
 /* Profile Circle */
 .profile-container {
   position: relative;
-  margin-left: 1.5rem; /* Space between Purchased and Profile Circle */
+  margin-left: 2rem; /* Space between links and profile */
   cursor: pointer;
 }
 
 .profile-circle {
-  width: 40px;
-  height: 40px;
-  background-color: white;
-  color: #2563eb; /* Blue text */
+  width: 45px;
+  height: 45px;
+  background-color: #f1faee;
+  color: #457b9d; /* Blue text */
+  font-size: 1.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
   border-radius: 50%;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .profile-circle:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
+  background-color: #a8dadc; /* Mint hover */
 }
 
 /* Profile Popup */
 .profile-popup {
   position: absolute;
-  top: 50px;
+  top: 60px;
   right: 0;
   background-color: white;
   color: #333;
   padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+  width: 250px;
   z-index: 10;
 }
 
@@ -88,7 +96,7 @@
 }
 
 .logout-btn {
-  background-color: #f87171;
+  background-color: #e63946; /* Bright red button */
   color: white;
   border: none;
   border-radius: 5px;
@@ -96,8 +104,27 @@
   cursor: pointer;
   width: 100%;
   margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .logout-btn:hover {
-  background-color: #ef4444;
+  background-color: #dc2f34; /* Darker red hover */
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none; /* Hide links on smaller screens */
+  }
+
+  .profile-container {
+    margin-left: 1rem;
+  }
+
+  .navbar-title a {
+    font-size: 1.5rem;
+  }
 }

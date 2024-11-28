@@ -29,7 +29,7 @@ const Home = () => {
 
       {/* Categories Section */}
       <div className="categories-section">
-        <h2 className="categories-title">Browse by Categories</h2>
+        <h2 style={{"fontFamily":"cursive"}}className="categories-title">Browse by Categories</h2>
         <div className="categories-grid">
           {categories.map((category, index) => (
             <Link to={`/category/${category.name}`} key={index} className="category-card">
