@@ -40,7 +40,7 @@ const Navbar = () => {
       <div className="navbar-container">
         {/* Title */}
         <div className="navbar-title">
-          <Link to="/">Scholar's Haven</Link>
+          <Link to="/">Book Hub</Link>
         </div>
 
         {/* Links */}

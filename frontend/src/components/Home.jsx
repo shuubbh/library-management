@@ -16,17 +16,30 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <h1 className="home-title">Welcome to Scholar's Haven</h1>
-      <p className="home-subtitle">
-        Discover books across various genres and explore a world of knowledge and imagination.
-      </p>
-      <div className="categories-grid">
-        {categories.map((category, index) => (
-          <Link to="/category" key={index} className="category-card">
-            <h2>{category.name}</h2>
-            <p>{category.description}</p>
-          </Link>
-        ))}
+      {/* Hero Section */}
+      <div className="hero-section">
+        <h1 className="home-title">Discover the World of Books</h1>
+        <p className="home-subtitle">
+          From epic adventures to insightful biographies, explore your next great read.
+        </p>
+        <Link to="/explore" className="explore-button">
+          Explore Now
+        </Link>
+      </div>
+
+      {/* Categories Section */}
+      <div className="categories-section">
+        <h2 className="categories-title">Browse by Categories</h2>
+        <div className="categories-grid">
+          {categories.map((category, index) => (
+            <Link to={`/category/${category.name}`} key={index} className="category-card">
+              <div className="category-card-overlay">
+                <h3>{category.name}</h3>
+                <p>{category.description}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
